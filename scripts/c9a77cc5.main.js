@@ -1,0 +1,1 @@
+$(window).ready(function(){$("#input-string").on("keyup",function(){var a="#"+md5($(this).val()).substr(0,6);$("body").animate({"background-color":a},100),$("#hash-value").text(a)})});

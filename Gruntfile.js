@@ -374,6 +374,22 @@ module.exports = function (grunt) {
         'imagemin',
         'svgmin'
       ]
+    },
+
+    // Run the build control task to push the built code to Github pages
+    buildcontrol: {
+      options: {
+        dir: 'dist',
+        commit: true,
+        push: true,
+        message: 'Build %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+      },
+      pages: {
+        options: {
+          remote: 'git@github.com:jwhayman/colour-hash.git',
+          branch: 'gh-pages'
+        }
+      }
     }
   });
 

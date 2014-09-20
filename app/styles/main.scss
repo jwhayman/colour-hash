@@ -1,0 +1,61 @@
+$icon-font-path: '../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/';
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+$input-padding-vertical: 10px;
+$input-padding-horizontal: 10px;
+$input-min-height: 50px;
+$selection-color: #eee;
+
+@mixin no-borders {
+  border: 0;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+@mixin selection {
+  ::-moz-selection { background-color: $selection-color; }
+  ::selection { background-color: $selection-color; }
+}
+
+// Space out content a bit
+body {
+  background-color: #d41d8c;
+  padding: 20px 0;
+}
+
+.input-group-addon,
+.form-control {
+  font-family: $font-family-monospace;
+  font-size: $font-size-large;
+  min-height: $input-min-height;
+  padding: $input-padding-vertical $input-padding-horizontal;
+  @include no-borders;
+}
+
+.input-group {
+  margin-top: 200px;
+
+  #input-string {
+
+    &:focus { @include no-borders; }
+  }
+
+  #hash-value {
+    text-transform: uppercase;
+  }
+}
+
+@include selection;
+
+// Responsive: Portrait tablets and up
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
